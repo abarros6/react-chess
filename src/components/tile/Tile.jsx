@@ -1,15 +1,16 @@
 const Tile = (props) => {
     const customStyles = {
-        color: props.color,
-        height: props.height,
-        width: props.width,
+        backgroundColor: props.color,
+        height: props.size,
+        width: props.size,
     }
 
     return (
         <div 
-            style = {`color: ${props.color}; height: ${props.height}; `}
+            style = {customStyles}
         >
-
+            {props.coor.file}
+            {props.coor.rank}
         </div>
     )
 }

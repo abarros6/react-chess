@@ -1,4 +1,4 @@
-import {Board} from '../board/Board.jsx'
+import Board from '../board/Board.jsx'
 
 const Game = (props) => {
     const color = true;
