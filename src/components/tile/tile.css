@@ -1,0 +1,13 @@
+/* .tile {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    vertical-align: center;
+} */
+
+.tile p {
+    opacity: 0.5;
+    margin: 0;
+    position: relative;
+    transform: translate(-30%, -0%);
+  }
