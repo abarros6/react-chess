@@ -1,13 +1,22 @@
-/* .tile {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    vertical-align: center;
-} */
+.tile {
+    width: 80px;
+    height: 80px;
+    display: grid;
+    place-content: center;
+}
 
-.tile p {
-    opacity: 0.5;
-    margin: 0;
-    position: relative;
-    transform: translate(-30%, -0%);
-  }
+.piece {
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80px;
+}
+
+.black-tile {
+    background-color: #B58962;
+}
+
+.white-tile {
+    background-color: #F0D9B5;
+}

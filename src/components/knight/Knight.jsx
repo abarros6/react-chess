@@ -1,11 +1,12 @@
-import {ReactComponent as BlackKnight} from '../../assets/blackKnight.svg'
-import {ReactComponent as WhiteKnight} from '../../assets/whiteKnight.svg'
+import BlackKnight from '../../assets/knight_b.png'
+import WhiteKnight from '../../assets/knight_w.png'
 
 const Knight = (props) => {
     const color = true;
 
     return (
-        color ? <BlackKnight/> : <WhiteKnight/>
+        color ? <img src={BlackKnight}></img>  : 
+                <img src={WhiteKnight}></img>
     )
 }
 

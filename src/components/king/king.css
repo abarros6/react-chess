@@ -1,0 +1,12 @@
+/* .king {
+    position: absolute;
+    top: 50%; 
+    right: 50%;
+    transform: translate(50%,-50%);
+} */
+
+svg {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}

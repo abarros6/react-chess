@@ -1,11 +1,12 @@
-import {ReactComponent as BlackBishop} from '../../assets/blackBishop.svg'
-import {ReactComponent as WhiteBishop} from '../../assets/whiteBishop.svg'
+import BlackBishop from '../../assets/bishop_b.png'
+import WhiteBishop from '../../assets/bishop_w.png'
 
 const Bishop = (props) => {
     const color = true;
 
     return (
-        color ? <BlackBishop/> : <WhiteBishop/>
+        color ? <img src={BlackBishop}></img>  : 
+                <img src={WhiteBishop}></img>
     )
 }
 

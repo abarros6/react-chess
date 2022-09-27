@@ -1,58 +1,46 @@
 import Tile from '../tile/Tile.jsx'
+import './board.css'
 
 const Board = (props) => {
 
-    const size = '80px'
     const files = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    const ranks = ['8', '7', '6', '5', '4', '3', '2', '1']
 
-    const makeBoard = () => {
-        let boardCoordinates = []
-        for (let r = 8; r > 0; r--) {
-            let row = []
-            for (let c = 1; c < 9; c++) {
+    //this is just for visualizing the grid
+    let xy = [
+        [0,1,2,3,4,5,6,7], //0
+        [0,1,2,3,4,5,6,7], //1
+        [0,1,2,3,4,5,6,7], //2
+        [0,1,2,3,4,5,6,7], //3
+        [0,1,2,3,4,5,6,7], //4
+        [0,1,2,3,4,5,6,7], //5
+        [0,1,2,3,4,5,6,7], //6
+        [0,1,2,3,4,5,6,7], //7
+    ]
 
-                r % 2 === 0 ? c % 2 === 0 ? 
-                row.push(<Tile color={'#B58962'} size={size} coor={{file: files[c-1], rank: r}}/>) : 
-                row.push(<Tile color={'#F0D9B5'} size={size} coor={{file: files[c-1], rank: r}}/>)
-                : c % 2 === 0 ? 
-                row.push(<Tile color={'#F0D9B5'} size={size} coor={{file: files[c-1], rank: r}}/>) : 
-                row.push(<Tile color={'#B58962'} size={size} coor={{file: files[c-1], rank: r}}/>)
+    const createBoard = () => {
+        let chessGrid = []
 
+        for (let rank of ranks) {
+            for (let file of files) {
+                let x = files.indexOf(file)
+                let y = ranks.indexOf(rank)
+                let n = x + y + 2
+                n % 2 === 0 ? 
+                    chessGrid.push(<Tile color={false} x={x} y={y}/>) :
+                    chessGrid.push(<Tile color={true} x={x} y={y}/>)  
             }
-            boardCoordinates.push(row)
         }
-        return boardCoordinates
+
+        return chessGrid
     }
-    
-    const boardArray = makeBoard()
-    
-    //if the props.piece.component === the actual react piece 
-    // props.piece.position === the index on the board of that peices' location
+
+    const boardArray = createBoard()
 
     return (
-        <tbody>
-            {
-                boardArray.map((row, rowIndex) => {
-                    return (
-                        <tr key={rowIndex}>
-                            {row.map((tile, tileIndex) => {
-                                return (
-                                    <td key={tileIndex}>
-                                        {tile}
-                                        {console.log(`${rowIndex}, and the tile index ${tileIndex}`)}
-                                        {console.log(props.piece)}
-                                        {props.piece.location === {file: rowIndex, rank: tileIndex} && 
-                                        props.piece.component}
-                                        
-                                    </td>
-                                )
-                            })}
-                        </tr>
-                    )
-                })
-
-            }
-        </tbody>
+        <div id={'chessboard'}>
+            {boardArray} 
+        </div>
     )
 }
 

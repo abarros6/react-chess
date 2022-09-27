@@ -1,23 +1,23 @@
 import './tile.css'
+import King from '../king/King.jsx'
+import Queen from '../queen/Queen.jsx'
+import Knight from '../knight/Knight.jsx'
+import Rook from '../rook/Rook.jsx'
+import Bishop from '../bishop/Bishop.jsx'
+import Pawn from '../pawn/Pawn.jsx'
+
+
 
 const Tile = (props) => {
-    const customStyles = {
-        backgroundColor: props.color,
-        height: props.size,
-        width: props.size,
-    }
+
+    //inside the tile divs, render a piece if the
+    
+    
 
     return (
-        <div 
-            style = {customStyles}
-            className={`tile ${props.coor.file.concat(props.coor.rank)}`}
-            onClick={() => {console.log(document.getElementsByClassName(props.coor.file.concat(props.coor.rank)))}}
-        >
-            <p>
-                {props.coor.file}
-                {props.coor.rank}
-            </p>
-        </div>
+        props.color ? 
+            <div className="tile black-tile"><King color = {true} className = {'piece'}/></div> : 
+            <div className="tile white-tile"></div>
     )
 }
 
