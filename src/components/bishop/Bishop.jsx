@@ -2,10 +2,9 @@ import BlackBishop from '../../assets/bishop_b.png'
 import WhiteBishop from '../../assets/bishop_w.png'
 
 const Bishop = (props) => {
-    const color = true;
 
     return (
-        color ? <img src={BlackBishop}></img>  : 
+        props.color ? <img src={BlackBishop}></img>  : 
                 <img src={WhiteBishop}></img>
     )
 }
