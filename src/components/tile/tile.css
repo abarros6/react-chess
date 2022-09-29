@@ -5,12 +5,15 @@
     place-content: center;
 }
 
+/* this is currently not applied to anything */
 .piece {
     width: 100px;
     height: 100px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80px;
+    position: relative;
+    z-index: 1;
 }
 
 .black-tile {
@@ -20,3 +23,17 @@
 .white-tile {
     background-color: #F0D9B5;
 }
+
+.circle {
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    background-color: plum;
+    position: relative;
+    /* top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; */
+    border-radius: 50%;
+    z-index: 0;
+  }

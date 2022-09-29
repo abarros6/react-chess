@@ -4,8 +4,8 @@ import WhiteBishop from '../../assets/bishop_w.png'
 const Bishop = (props) => {
 
     return (
-        props.color ? <img src={BlackBishop}></img>  : 
-                <img src={WhiteBishop}></img>
+        props.color ? <img src={BlackBishop} onClick={props.onClick}></img>  : 
+                <img src={WhiteBishop} onClick={props.onClick}></img>
     )
 }
 

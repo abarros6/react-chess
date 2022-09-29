@@ -10,8 +10,18 @@ const Tile = (props) => {
 
     return (
         props.color ? 
-            <div className="tile black-tile">{props?.piece?.component}</div> : 
-            <div className="tile white-tile">{props?.piece?.component}</div>
+            <div className={`tile black-tile ${props?.moveCircle}`}>
+                {/* {props?.piece?.component} */}
+                <span className='circle'>
+                    {props?.piece?.component}
+                </span>
+            </div> : 
+            <div className={`tile white-tile ${props?.moveCircle}`}>
+                <span>
+                    {props?.piece?.component}
+                </span>
+                {/* {props?.piece?.component} */}
+            </div>
     )
 }
 
